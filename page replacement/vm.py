@@ -1,5 +1,4 @@
 from os import pardir
-from collections import deque
 
 class SimpleVM:
     _ReplacementPolicies = ['OPT', 'LRU', 'FIFO', 'SecondChance']
@@ -14,7 +13,7 @@ class SimpleVM:
         self.valid = ['i' for i in range(numPages)]
         self.reference = [False for _ in range(numPages)]
 
-        self.frames = [None for i in range(numFrames)] # storage
+        self.frames = [None for i in range(numFrames)] # storage of page content 
         self.dirty = [False for i in range(numFrames)]
         self.pageFaultCount = 0
         self.pageInCount = 0
@@ -197,7 +196,7 @@ class SimpleVM:
         # the frame is written to with data.
         # do bookkeeping with write=True
         frameNum = self.getFrame(pageNum, future)
-        self.frames[self.getFrame(pageNum, future)] = data
+        self.frames[frameNum] = data
         self.updateAccess(frameNum, True)
 
 if __name__ == '__main__':

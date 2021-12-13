@@ -1,0 +1,1 @@
+Practice Python code for implementing some OS related concepts such as threads, mutex, page replacement policy and so on.
