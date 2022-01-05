@@ -96,7 +96,6 @@ class PFS:
             raise ValueError('split error on %s' % path)
 
     def createFile(self, name, enclosingDir):
-        # @@@ write your code here
         # allocate a new FCB and update its directory structure:
         # * if default directory is None, set it to root.
         if enclosingDir is None:
@@ -112,7 +111,6 @@ class PFS:
         # Note: this does not allocate blocks for the file.
 
     def createDir(self, name, enclosingDir):
-        # @@@ write your code here
         # create a new directory under name in enclosing directory.
         if enclosingDir is None:
             enclosingDir = self.root
@@ -127,7 +125,6 @@ class PFS:
 
 
     def deleteFile(self, name, enclosingDir):
-        # @@@ write your code here
         # * lookup the fcb by name in the enclosing directory.
         fcb = enclosingDir.lookup(name)
         if fcb is not None:
@@ -147,7 +144,6 @@ class PFS:
                     self.freeFCB(fcb)
 
     def deleteDirectory(self, name, enclosingDir):
-        # @@@ write your code here
         # * lookup the dentry by name in the enclosing directory.
         dEntry = enclosingDir.lookup(name)
         if len(dEntry.content) != 0:
@@ -160,7 +156,6 @@ class PFS:
         self.freeDEntry(dEntry)
 
     def rename(self, name, newName, enclosingDir):
-        # @@@ write your code here
         # * check if newName is already in enclosingDir, raise exception
         if newName in enclosingDir.names:
             raise RuntimeError("The new name has already existed")
@@ -171,7 +166,6 @@ class PFS:
         enclosingDir.updateModTime()
 
     def move(self, name, fromDir, toDir):
-        # @@@ write your code here
         # * check if name is already in toDir, raise exception
         if name in toDir.names:
             raise RuntimeError("name is already in toDir")
