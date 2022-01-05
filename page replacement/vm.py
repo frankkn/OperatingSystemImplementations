@@ -121,7 +121,6 @@ class SimpleVM:
         self.dirty[frameNum] = False
 
     def pageOut(self, frameNum):
-        # Your code here!!
         # this flushes a frame (for a given pageNum) to swap space.\
         # Note that we only mark it as not-dirty, but it does not
         # change state of valid bit because that is someone else's decision
@@ -182,7 +181,6 @@ class SimpleVM:
         pass
 
     def readPage(self, pageNum, future=None):
-        # Your code here!!
         # get the frame number -- can call the getFrame() method for this.
         # use the frame number to get the data so we can return it.
         # do some bookkeeping by calling updateAccess
@@ -191,7 +189,6 @@ class SimpleVM:
         return self.frames[frameNum]
 
     def writePage(self, pageNum, data, future=None):
-        # Your code here!!
         # analogous to the readPage, except 
         # the frame is written to with data.
         # do bookkeeping with write=True
