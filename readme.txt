@@ -7,3 +7,4 @@ Content: Exercise on OS simple concepts such as:
           2. Deadlock detection by DFS
           3. Page replacement policies
           4. File system simulation (FCB, DEntry)
+
