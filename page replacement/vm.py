@@ -65,7 +65,6 @@ class SimpleVM:
             # use future knowledge to pick victim
             if future is None:
                 raise ValueError('cannot pick OPT without future')
-            # Your code here!!
             # find the page that won't be used for the longest time in future
             # find page that won't be used for longest time in future
             # Note if future is empty list, then any page is ok!
@@ -80,14 +79,12 @@ class SimpleVM:
                     victim_frame_id = frame_id
             
         if self.replacementPolicy == 'LRU':
-            # Your code here!!
             # pull the victim from the bottom of this "stack"
             # the assumption is if we have free frame in the first place,
             # we would not need to evict anybody.
             victim_frame_id = self.pageTable[self.stack[0]]
 
         if self.replacementPolicy == 'FIFO':
-            # Your code here!!
             # pick victim according to FIFO order
             victim_frame_id = self.turn
             self.turn = (self.turn + 1) % self.numFrames
@@ -103,7 +100,7 @@ class SimpleVM:
             self.turn = (self.turn + 1) % self.numFrames            
     
         return victim_frame_id
-        # if we have not returned by then, it?™s an unknown policy
+        # if we have not returned by then, it's an unknown policy
         raise ValueError('unknown poliy %s' % self.replacementPolicy)
 
     def pageIn(self, frameNum, pageNum):
@@ -162,7 +159,6 @@ class SimpleVM:
         # utility to update access (common to read/write) after
         # a page has been accessed.
         if self.replacementPolicy == 'LRU':
-            # Your code here!!
             # find frame in stack; if found, pop it.
             # in either case, push back on stack.
             pageNum = self.frameTable[frameNum]
@@ -173,7 +169,7 @@ class SimpleVM:
                     self.stack = self.stack[1:]
             self.stack.append(pageNum)
         if self.replacementPolicy == 'SecondChance':
-            # Your own code!! - mark the reference bit
+            # mark the reference bit
             self.reference[frameNum] = True
 
         if write:  # for future use, supporting write access.
