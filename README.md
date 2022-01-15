@@ -9,5 +9,5 @@ Used language: Python
 
           1. Counting semaphore and threads: Parking lot example 
           2. Deadlock detection by DFS
-          3. Page replacement policies
+          3. Page replacement policies including OPT, LRU, FIFO, SecondChance
           4. File system simulation (FCB, DEntry)
