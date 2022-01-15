@@ -1,7 +1,7 @@
 # Course: Operating Systems_11010CS 342302
 
 Start Date: 2021/09/13
-
+Used language: Python
 
 
 ## Content: Exercise on OS simple concepts
