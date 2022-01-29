@@ -4,7 +4,6 @@
 
 from pfs import *
 
-
 class PerProcessFileEntry:
     '''
         this is the data structure for the per-process open-file table.
@@ -22,7 +21,6 @@ class ProcessFS:
         self.fs = fs
         self.cwd, filename = self.fs.parsePath(homePath, None)
 
-
     def open(self, filepath):
         '''
             open a file by name, read its FCB into in-memory open-file table
@@ -36,16 +34,23 @@ class ProcessFS:
 
         # find the FCB under the given file name in the enclsoing dir
         # if not found or not file, raise exception.
-
+        fcb = enclosingDir.lookup(filename)
+        if fcb == None:
+            raise RuntimeError("FCN is not found")
         # if the FCB is not already in the system-wide open file table,
         # then add it, and increment its open count.
-
+        if fcb not in self.openFileTable:
+            self.openFileTable.append(fcb)
         # create a per-process file entry for this FCB,
         # put it in the per-process open file table, 
         # and set the descriptor (an int) to be its index in the table.
+        per_process_file_entry   = PerProcessFileEntry(fcb) 
+        self.openFileTable.append(per_process_file_entry)
+        des = self.openFileTable.index(per_process_file_entry)
         # update the last-access time
+        per_process_file_entry.fcb.updateAccessTime()
         # return the descriptor.
-
+        return des
 
     def close(self, descriptor):
         '''
@@ -56,6 +61,7 @@ class ProcessFS:
                update metadata to disk-based directory structure
         '''
         # find the per-process file entry using descriptor
+       
         # extract the FCB, decrement its open count
         # if no more open count, delete its entry in the system-wide 
         #   open-file table.
@@ -101,7 +107,8 @@ class ProcessFS:
 
 if __name__ == '__main__':
     directoryTree = ( '/',  ('home/', ('u1/', 'hello.c'),
-                                    ('u2/', 'world.h'), 'homefiles'),
+                                    ('u2/', 'world.h'), 
+                                    'homefiles'),
                             ('bin/', 'ls'),
                             ('etc/', ))
 
