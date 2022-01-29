@@ -10,7 +10,7 @@ Used language: Python, C
 3. Page replacement policies including OPT, LRU, FIFO, SecondChance
 4. File system simulation (FCB, DEntry)
 
-## Final Project: Parking lot simuilation 
+## Final Project: Parking lot simuilation (C)
 
 ### Spec
 1. Make 5 cars competing for 2 spots. Make thread for each car.
