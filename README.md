@@ -25,5 +25,9 @@ To compile this project and run testing and experiments, you need the following 
 ● `make`<br>
 ● `EdSim51` - The 8051 Simulator<br>
 
-### Sample output
+<img src="https://github.com/frankkn/OS-implementations/blob/master/OS%20final%20project/images/Edsim51.jpg" width="400" height="300" alt="E"/><br/>
 
+### Sample output
+Three digits per row representing Car_id, park in or out, time unit.
+
+![Sample](https://github.com/frankkn/OS-implementations/blob/master/OS%20final%20project/images/sample%20output.jpg)
