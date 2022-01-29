@@ -1,7 +1,7 @@
 # Course: Operating Systems_11010CS 342302
 
-Start Date: 2021/09/13
-Used language: Python, C
+Start Date: 2021/09/13<br>
+Used language: Python, C<br>
 
 ## Content: Exercise on OS concepts (Python)
 
