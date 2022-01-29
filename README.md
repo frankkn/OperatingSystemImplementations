@@ -3,7 +3,7 @@
 Start Date: 2021/09/13<br>
 Used language: Python, C<br>
 
-## Content: Exercise on OS concepts (Python)
+## Exercise on OS concepts (Python)
 
 1. Counting semaphore and threads: Parking lot example 
 2. Deadlock detection by DFS
