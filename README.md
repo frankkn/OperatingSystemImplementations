@@ -5,21 +5,25 @@ Used language: Python, C
 
 ## Content: Exercise on OS concepts (Python)
 
-          1. Counting semaphore and threads: Parking lot example 
-          2. Deadlock detection by DFS
-          3. Page replacement policies including OPT, LRU, FIFO, SecondChance
-          4. File system simulation (FCB, DEntry)
+1. Counting semaphore and threads: Parking lot example 
+2. Deadlock detection by DFS
+3. Page replacement policies including OPT, LRU, FIFO, SecondChance
+4. File system simulation (FCB, DEntry)
 
 ## Final Project: Parking lot simuilation 
 
-          1. Make 5 cars competing for 2 spots. Make thread for each car.
-          2. Threads package supports at most 4 threads (including main).
-          3. Create threads up to the maximum number available by semaphore.
-          4. Maintain a “log” for the events:
-                    ● When a car gets the parking spot (what time, which spot)
-                    ● When a car exits the parking lot (what time)
+### Spec
+1. Make 5 cars competing for 2 spots. Make thread for each car.
+2. Threads package supports at most 4 threads (including main).
+3. Create threads up to the maximum number available by semaphore.
+4. Maintain a “log” for the events:<br>
+● When a car gets the parking spot (what time, which spot)<br>
+● When a car exits the parking lot (what time)<br>
 
-To compile this project and run testing and experiments, you need the following tools:
+### Prerequisites
+To compile this project and run testing and experiments, you need the following tools:<br>
+● `make`<br>
+● `EdSim51` - The 8051 Simulator<br>
 
-          ● `make`
-          ● `EdSim51` - The 8051 Simulator
+### Sample output
+
